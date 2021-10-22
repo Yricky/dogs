@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 29
 
     defaultConfig {
         applicationId "com.yricky.dogs"
@@ -29,10 +29,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    viewBinding{
+        enabled = true
+    }
 }
 
 dependencies {
-
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
