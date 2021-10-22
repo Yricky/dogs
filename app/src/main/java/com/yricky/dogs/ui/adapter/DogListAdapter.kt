@@ -44,7 +44,7 @@ class DogListAdapter: RecyclerView.Adapter<DogListAdapter.ViewHolder>() {
 
     fun notifyItemChanged(dog:Dog){
         val index = list.indexOf(dog)
-        if(index > 0){
+        if(index >= 0){
             notifyItemChanged(index)
         }
     }
@@ -56,17 +56,9 @@ class DogListAdapter: RecyclerView.Adapter<DogListAdapter.ViewHolder>() {
             binding.tvDogName.text = d.name
             binding.tvDogDate.text = df.format(Date(d.date))
             binding.root.apply {
-                scaleX = 0.9f
-                scaleY = 0.9f
                 setOnClickListener {
                     onItemClickListener?.invoke(d,this@DogListAdapter)
                 }
-            }
-            binding.root.animate().apply {
-                scaleX(1f)
-                scaleY(1f)
-                duration  = 200
-                start()
             }
         }
     }

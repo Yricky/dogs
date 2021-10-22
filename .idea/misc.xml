@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/compose-model-1634910317640.xml" value="0.47053872053872053" />
+        <entry key="../../../../../layout/compose-model-1634913111620.xml" value="0.8" />
+        <entry key="../../../../../layout/compose-model-1634913537078.xml" value="1.0" />
         <entry key="app/src/main/res/layout/activity_dog_edit.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.32760416666666664" />
-        <entry key="app/src/main/res/layout/dialog_dog_edit.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/dialog_dog_edit.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/item_dog.xml" value="0.2" />
         <entry key="app/src/main/res/layout/ltem_dog.xml" value="0.4" />
       </map>
     </option>

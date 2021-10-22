@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ohui">
         <activity
+            android:name=".ui.activity.DogEditActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dog_edit"/>
+        <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>

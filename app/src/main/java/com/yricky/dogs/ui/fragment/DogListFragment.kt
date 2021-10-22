@@ -1,5 +1,6 @@
 package com.yricky.dogs.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.yricky.dogs.DogApp
+import com.yricky.dogs.ui.activity.DogEditActivity
 import com.yricky.dogs.ui.adapter.DogListAdapter
 
 /**
@@ -14,7 +17,7 @@ import com.yricky.dogs.ui.adapter.DogListAdapter
  * @date  2021/10/22 下午7:33
  */
 class DogListFragment:Fragment() {
-    private val adapter by lazy{
+    private val mAdapter by lazy{
         DogListAdapter()
     }
     override fun onCreateView(
@@ -26,18 +29,27 @@ class DogListFragment:Fragment() {
             overScrollMode = View.OVER_SCROLL_NEVER
             post {
                 layoutManager = getGridLayoutManager(300)
-                adapter = DogListAdapter().also {
-                    it.onItemClickListener = { dog,adapter ->
-
+                adapter = mAdapter.also {
+                    it.onItemClickListener = { dog,_ ->
+                        DogApp.app.currEditDog = dog
+                        startActivity(Intent(requireActivity(), DogEditActivity::class.java))
                     }
                 }
             }
         }
     }
 
+    override fun onResume() {
+        DogApp.app.currEditDog?.let{
+            mAdapter.notifyItemChanged(it)
+        }
+        DogApp.app.currEditDog = null
+        super.onResume()
+    }
+
     override fun onPause() {
         super.onPause()
-        adapter.save()
+        mAdapter.save()
     }
 }
 

@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.actionBar)
 
-
         supportFragmentManager.apply {
             if(findFragmentByTag("list") == null){
                 beginTransaction().add(R.id.list_container,DogListFragment(),"list").commit()

@@ -4,6 +4,7 @@ import android.app.Application
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.yricky.android.utils.ThreadUtils
+import com.yricky.dogs.pojo.Dog
 import java.io.File
 import java.lang.RuntimeException
 
@@ -21,7 +22,7 @@ class DogApp:Application() {
         ThreadUtils.init()
         app = this
     }
-
+    var currEditDog: Dog? = null
 }
 
 
